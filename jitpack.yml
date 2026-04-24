@@ -1,0 +1,9 @@
+jdk:
+  - openjdk21
+before_install:
+  - sdk install java 21.0.6-tem
+  - sdk use java 21.0.6-tem
+  - sdkmanager --install "ndk;28.0.13004108"
+  - git submodule update --init --recursive
+install:
+  - ./gradlew :sherpa-ncnn:publishToMavenLocal --parallel --no-daemon

@@ -1,0 +1,3 @@
+[submodule "sherpa-ncnn-upstream"]
+	path = sherpa-ncnn-upstream
+	url = https://github.com/k2-fsa/sherpa-ncnn.git
