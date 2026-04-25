@@ -38,7 +38,7 @@ data class RecognizerConfig(
 
 class SherpaNcnn(
     var config: RecognizerConfig,
-    assetManager: android.content.res.AssetManager? = null,
+    assetManager: AssetManager? = null,
 ) {
     private val ptr: Long
 
@@ -69,7 +69,7 @@ class SherpaNcnn(
         get() = getText(ptr)
 
     private external fun newFromAsset(
-        assetManager: android.content.res.AssetManager,
+        assetManager: AssetManager,
         config: RecognizerConfig,
     ): Long
 
@@ -92,9 +92,9 @@ class SherpaNcnn(
 
         init {
             try {
-                java.lang.System.loadLibrary("sherpa-ncnn-jni")
+                System.loadLibrary("sherpa-ncnn-jni")
                 isLibraryLoaded = true
-            } catch (e: java.lang.UnsatisfiedLinkError) {
+            } catch (e: UnsatisfiedLinkError) {
                 e.printStackTrace()
             }
         }

@@ -39,16 +39,6 @@ android {
         }
     }
 
-    sourceSets {
-        getByName("main") {
-            java {
-                directories.add("${projectDir}/../sherpa-ncnn-upstream/android/SherpaNcnn/app/src/main/java")
-                // Note: exclude is intentionally omitted here due to DSL ambiguity in KTS with AGP 9.0 built-in Kotlin.
-                // You can use a filter at the task level if needed.
-            }
-        }
-    }
-
     buildTypes {
         release {
             isMinifyEnabled = false
