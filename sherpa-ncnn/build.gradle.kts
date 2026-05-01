@@ -8,7 +8,7 @@ android {
     compileSdk = 36
 
     defaultConfig {
-        minSdk = 21
+        minSdk = 30
 
         val abis = (project.findProperty("SHERPA_NCNN_ABIS") as? String)
             ?.split(",")
